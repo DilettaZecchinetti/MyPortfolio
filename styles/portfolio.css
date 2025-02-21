@@ -1,0 +1,134 @@
+body {
+    background-color: #8f5197;
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.topBlur {
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    min-width: 350px;
+    top: -128px;
+    left: -10vw;
+    border-radius: 764px;
+    background: rgba(178, 145, 192, 0.411);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.bottomBlur {
+    position: absolute;
+    width: 70vw;
+    height: 50vw;
+    min-width: 350px;
+    top: 246px;
+    right: -25vw;
+    border-radius: 764px;
+    background: rgba(178, 145, 192, 0.411);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+h1, h2 {
+    font-family: Poppins;
+    color: white;
+font-size: 50px;
+font-weight: 500;
+line-height: 2;
+}
+ 
+h3 {
+    font-weight: bold;
+}
+.navbar-nav {
+display: flex;
+text-align: end;
+padding-right: 200px;
+}
+
+.nav-item {
+    color: white;
+}
+
+.typewriter {
+    white-space: nowrap;
+    display: inline-block;
+    height: 1em;
+    min-width: 5ch; 
+    vertical-align: middle;
+}
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 1em;
+    background-color: black;
+    margin-left: 2px;
+    animation: blink 0.8s infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.introduction {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding: 20px;
+    margin: 0 200px;
+}
+
+.bounce-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.bounce-image:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+button {
+    background-color: #8f5197;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+.image-container {
+    width: 450px; 
+    height: auto;
+    margin-right: 20px; 
+}
+
+.image-container img {
+    width: 100%; 
+    height: auto; 
+}
+
+.text {
+    font-size: 18px; 
+    color: #fff; 
+    max-width: 400px; 
+    text-align: center;
+}
