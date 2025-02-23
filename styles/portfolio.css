@@ -1,52 +1,50 @@
 body {
-    background-color: #8f5197;
+    background-color: #1f1723;
     position: relative;
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    height: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.topBlur, .bottomBlur {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    min-width: 250px;
+    border-radius: 764px;
+    background: rgba(153, 78, 185, 0.178);
+    filter: blur(100px);
+    z-index: -1;
 }
 
 .topBlur {
-    position: absolute;
-    width: 50vw;
-    height: 50vw;
-    min-width: 350px;
     top: -128px;
     left: -10vw;
-    border-radius: 764px;
-    background: rgba(178, 145, 192, 0.411);
-    filter: blur(100px);
-    z-index: -1;
 }
 
 .bottomBlur {
-    position: absolute;
-    width: 70vw;
-    height: 50vw;
-    min-width: 350px;
     top: 246px;
     right: -25vw;
-    border-radius: 764px;
-    background: rgba(178, 145, 192, 0.411);
-    filter: blur(100px);
-    z-index: -1;
 }
 
 h1, h2 {
     font-family: Poppins;
     color: white;
-font-size: 50px;
-font-weight: 500;
-line-height: 2;
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: 500;
+    line-height: 2;
 }
- 
+
 h3 {
     font-weight: bold;
 }
+
 .navbar-nav {
-display: flex;
-text-align: end;
-padding-right: 200px;
+    display: flex;
+    text-align: end;
+    padding-right: 200px;
 }
 
 .nav-item {
@@ -60,6 +58,7 @@ padding-right: 200px;
     min-width: 5ch; 
     vertical-align: middle;
 }
+
 .cursor {
     display: inline-block;
     width: 5px;
@@ -68,6 +67,7 @@ padding-right: 200px;
     margin-left: 2px;
     animation: blink 0.8s infinite;
 }
+
 @keyframes blink {
     50% { opacity: 0; }
 }
@@ -96,23 +96,12 @@ padding-right: 200px;
     animation: bounce 0.5s ease-in-out;
 }
 
-button {
-    background-color: #8f5197;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 40px;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
 .container {
     display: flex;
     align-items: center; 
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .image-container {
@@ -129,6 +118,144 @@ button {
 .text {
     font-size: 18px; 
     color: #fff; 
-    max-width: 400px; 
+    max-width: 600px; 
     text-align: center;
+    
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.fixed-icons-container {
+    position: fixed;
+    bottom: 20px;
+    left: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fixed-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fixed-icons a {
+    text-decoration: none;
+    background: #333; 
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.fixed-icons a:hover {
+    background: #0077b5;
+    transform: scale(1.1);
+}
+
+.vertical-line {
+    width: 2px;
+    height: 150px;
+    background-color: white; 
+    margin-top: 10px; 
+}
+
+.arrow.down {
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .introduction {
+        margin: 0 20px;
+    }
+    .navbar-nav {
+        flex-direction: column;
+        padding-right: 0;
+        text-align: center;
+    }
+    .fixed-icons-container {
+        left: 10px; 
+        top: 10px;
+        bottom: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    .fixed-icons {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@keyframes chevronBounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+.chevron-down {
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    animation: chevronBounce 1.5s infinite ease-in-out;
+}
+
+.extra-content {
+    padding: 50px;
+    background: #f8f9fa; 
+    text-align: center;
+    margin-top: 20px;
+    border-top: 2px solid #ddd;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
